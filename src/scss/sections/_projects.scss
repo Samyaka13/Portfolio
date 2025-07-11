@@ -34,6 +34,7 @@
       position: relative;
       display: flex;
       justify-content: flex-end;
+      min-height: 400px; // Ensure minimum height for proper spacing
       &-image {
         &-container {
           position: relative;
@@ -66,6 +67,13 @@
           transition: 0.3s ease-in-out;
         }
       }
+      
+      // Added spacing between image and info
+      &-spacing {
+        margin: 4rem 0;
+        height: 2rem; // Fixed height for consistent spacing
+      }
+      
       &-info {
         z-index: 5;
         width: 600px;
@@ -73,6 +81,8 @@
         flex-direction: column;
         align-items: flex-end;
         gap: 0.5rem;
+        margin-top: 4rem; // Increased margin for more space
+        padding-top: 2rem; // Additional padding for extra spacing
         &-overline {
           color: var(--theme-color);
           font-family: var(--fira-code);
@@ -157,12 +167,15 @@
       align-items: center;
       .project {
         justify-content: flex-start;
+        min-height: 350px; // Ensure minimum height for mobile
         .project-info {
           width: 600px;
           height: 300px;
           background-color: rgba(31, 10, 44, 0.592);
           align-items: flex-start;
           padding: 1rem;
+          margin-top: 2rem; // Increased margin for mobile
+          padding-top: 1.5rem; // Additional padding for mobile spacing
 
           &-description {
             background-color: transparent;
@@ -185,6 +198,7 @@
     margin: 5rem 0;
     &-container {
       .project {
+        min-height: 320px; // Ensure minimum height for tablets
         &-image {
           &-container {
             width: 500px;
@@ -194,6 +208,8 @@
         .project-info {
           width: 500px;
           height: 300px;
+          margin-top: 1.5rem; // Consistent margin for tablets
+          padding-top: 1rem; // Additional padding for tablet spacing
         }
       }
     }
@@ -201,6 +217,7 @@
   @media screen and (max-width: 600px) {
     &-container {
       .project {
+        min-height: 450px; // Ensure minimum height for small screens
         &-image {
           &-container {
             width: 350px;
@@ -210,6 +227,8 @@
         .project-info {
           width: 350px;
           height: 400px;
+          margin-top: 1rem; // Consistent margin for small screens
+          padding-top: 0.5rem; // Additional padding for small screen spacing
         }
       }
     }
