@@ -1,3 +1,4 @@
+// Hero Component Styles - Scalable and Responsive
 .hero {
   margin-top: 4rem;
   display: flex;
@@ -6,37 +7,114 @@
   gap: 1rem;
   justify-content: center;
   min-height: 60vh;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 
+  // Title styles with fallback values
   &-title {
-    color: var(--theme-color);
-    font-size: var(--tsm2);
-    font-family: var(--fira-code);
+    color: var(--theme-color, #64ffda);
+    font-size: var(--tsm2, 1.125rem);
+    font-family: var(--fira-code, 'Fira Code', 'Courier New', monospace);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    
+    // Responsive font sizes
+    @media screen and (max-width: 640px) {
+      font-size: var(--tsm1, 1rem);
+    }
+    
+    @media screen and (min-width: 1024px) {
+      font-size: var(--tsm3, 1.25rem);
+    }
   }
 
   &-title-large {
-    font-size: var(--tgiant);
-    font-family: var(--raleway);
-    color: var(--light-slate);
+    font-size: var(--tgiant, 4rem);
+    font-family: var(--raleway, 'Raleway', 'Arial', sans-serif);
+    color: var(--light-slate, #ccd6f6);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    
+    // Responsive scaling
+    @media screen and (max-width: 480px) {
+      font-size: var(--txlarge, 2.5rem);
+    }
+    
+    @media screen and (max-width: 640px) {
+      font-size: var(--txxlarge, 3rem);
+    }
+    
+    @media screen and (max-width: 768px) {
+      font-size: var(--txxxlarge, 3.5rem);
+    }
+    
+    @media screen and (min-width: 1024px) {
+      font-size: var(--tgiant-lg, 5rem);
+    }
+    
+    @media screen and (min-width: 1280px) {
+      font-size: var(--tgiant-xl, 6rem);
+    }
   }
 
   &-title-medium {
-    font-size: var(--tbig); // You can define this variable in your root
-    font-family: var(--raleway);
-    color: var(--slate);
+    font-size: var(--tbig, 2rem);
+    font-family: var(--raleway, 'Raleway', 'Arial', sans-serif);
+    color: var(--slate, #8892b0);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+    
+    // Responsive scaling
+    @media screen and (max-width: 480px) {
+      font-size: var(--tlarge, 1.5rem);
+    }
+    
+    @media screen and (max-width: 640px) {
+      font-size: var(--txlarge, 1.75rem);
+    }
+    
+    @media screen and (min-width: 1024px) {
+      font-size: var(--tbig-lg, 2.5rem);
+    }
+    
+    @media screen and (min-width: 1280px) {
+      font-size: var(--tbig-xl, 3rem);
+    }
   }
 
   &-title-sub {
-    color: var(--lightest-slate);
+    color: var(--lightest-slate, #a8b2d1);
   }
 
   &-text {
-    color: var(--slate);
-    margin-right: 40%;
-    font-size: var(--tlarge);
+    color: var(--slate, #8892b0);
+    font-size: var(--tlarge, 1.125rem);
     letter-spacing: 0.07rem;
-    line-height: 1.6rem;
-    font-weight: 600;
-    font-family: var(--raleway);
+    line-height: 1.6;
+    font-weight: 400;
+    font-family: var(--raleway, 'Raleway', 'Arial', sans-serif);
+    margin-bottom: 1rem;
+    max-width: 600px; // Better than margin-right approach
+    
+    // Responsive text sizing
+    @media screen and (max-width: 480px) {
+      font-size: var(--tmedium, 1rem);
+      line-height: 1.5;
+      letter-spacing: 0.05rem;
+    }
+    
+    @media screen and (max-width: 768px) {
+      max-width: 90%;
+    }
+    
+    @media screen and (min-width: 1024px) {
+      font-size: var(--tlarge-lg, 1.25rem);
+      line-height: 1.7;
+    }
   }
 
   &-button {
@@ -44,13 +122,112 @@
 
     .btn {
       padding: 1rem 2rem;
-      font-size: var(--tsm1);
+      font-size: var(--tsm1, 1rem);
+      font-family: var(--fira-code, 'Fira Code', 'Courier New', monospace);
+      background: transparent;
+      border: 2px solid var(--theme-color, #64ffda);
+      color: var(--theme-color, #64ffda);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      font-weight: 500;
+      
+      &:hover {
+        background: var(--theme-color-hover, rgba(100, 255, 218, 0.1));
+        transform: translateY(-2px);
+        box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+      }
+      
+      &:active {
+        transform: translateY(0);
+      }
+      
+      // Responsive button
+      @media screen and (max-width: 480px) {
+        padding: 0.875rem 1.5rem;
+        font-size: var(--tsm, 0.875rem);
+      }
     }
   }
 
+  // Overall responsive adjustments
   @media screen and (max-width: 768px) {
-    &-text {
-      width: 90%;
-    }
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+    gap: 0.75rem;
+    min-height: 50vh;
   }
+  
+  @media screen and (max-width: 480px) {
+    margin-top: 1rem;
+    padding: 0 1rem;
+    gap: 0.5rem;
+    min-height: 40vh;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    margin-top: 6rem;
+    padding: 0 2rem;
+    gap: 1.5rem;
+  }
+  
+  @media screen and (min-width: 1280px) {
+    margin-top: 8rem;
+    gap: 2rem;
+  }
+}
+
+// CSS Custom Properties (CSS Variables) - Default Values
+:root {
+  // Theme colors
+  --theme-color: #64ffda;
+  --theme-color-hover: rgba(100, 255, 218, 0.1);
+  --light-slate: #ccd6f6;
+  --slate: #8892b0;
+  --lightest-slate: #a8b2d1;
+  
+  // Font families
+  --fira-code: 'Fira Code', 'Courier New', monospace;
+  --raleway: 'Raleway', 'Arial', sans-serif;
+  
+  // Font sizes - Mobile first approach
+  --tsm: 0.875rem;      // 14px
+  --tsm1: 1rem;         // 16px
+  --tsm2: 1.125rem;     // 18px
+  --tsm3: 1.25rem;      // 20px
+  --tmedium: 1rem;      // 16px
+  --tlarge: 1.125rem;   // 18px
+  --txlarge: 1.5rem;    // 24px
+  --txxlarge: 2rem;     // 32px
+  --txxxlarge: 2.5rem;  // 40px
+  --tbig: 3rem;         // 48px
+  --tbig-lg: 3.5rem;    // 56px
+  --tbig-xl: 4rem;      // 64px
+  --tgiant: 4rem;       // 64px
+  --tgiant-lg: 5rem;    // 80px
+  --tgiant-xl: 6rem;    // 96px
+  
+  // Responsive breakpoints (for reference)
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+// Dark theme variables (optional)
+[data-theme="dark"] {
+  --theme-color: #64ffda;
+  --light-slate: #ccd6f6;
+  --slate: #8892b0;
+  --lightest-slate: #a8b2d1;
+}
+
+// Light theme variables (optional)
+[data-theme="light"] {
+  --theme-color: #2563eb;
+  --light-slate: #1e293b;
+  --slate: #475569;
+  --lightest-slate: #64748b;
 }

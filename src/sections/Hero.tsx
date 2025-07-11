@@ -2,75 +2,219 @@ import Button from "@/components/Button";
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
-function Hero() {
+
+// Define types for better TypeScript support
+interface HeroConfig {
+  greeting?: string;
+  name?: string;
+  tagline?: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink: string;
+  buttonAction?: () => void;
+}
+
+interface AnimationConfig {
+  duration?: number;
+  ease?: string;
+  staggerDelay?: number;
+}
+
+interface HeroProps {
+  config?: HeroConfig;
+  animationConfig?: AnimationConfig;
+  className?: string;
+}
+
+// Default configuration
+const defaultConfig: HeroConfig = {
+  greeting: "Hi my name is",
+  name: "Your Name",
+  tagline: "I blend design, logic, and performance",
+  description: "I'm a passionate developer who loves creating amazing digital experiences. I enjoy turning ideas into real-world solutions through full-stack web development and love exploring how technology can simplify and improve lives.",
+  buttonText: "Check out my resume",
+  buttonLink: "/resume.pdf"
+};
+
+const defaultAnimationConfig: AnimationConfig = {
+  duration: 0.3,
+  ease: "easeInOut",
+  staggerDelay: 0.15
+};
+
+function Hero({ 
+  config = {buttonLink: "/resume.pdf"}, 
+  animationConfig = {}, 
+  className = "" 
+}: HeroProps) {
+  // Merge configs with defaults
+  const mergedConfig = { ...defaultConfig, ...config };
+  const mergedAnimationConfig = { ...defaultAnimationConfig, ...animationConfig };
+  
+  const {
+    greeting,
+    name,
+    tagline,
+    description,
+    buttonText,
+    buttonLink,
+    buttonAction
+  } = mergedConfig;
+  
+  const { duration, ease, staggerDelay } = mergedAnimationConfig;
+
+  // Animation variants for reusability
+  const fadeInUpVariants = {
+    initial: { opacity: 0, y: 20 },
+    animate: { opacity: 1, y: 0 }
+  };
+
+  // Calculate delays based on stagger
+  const getDelay = (index: number) => 0.6 + (index * staggerDelay!);
+
   return (
-    <div className="hero">
+    <div className={`hero ${className}`}>
+      {/* Greeting */}
       <motion.h1
         className="hero-title"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
+        variants={fadeInUpVariants}
+        initial="initial"
+        animate="animate"
         transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-          delay: 0.6,
+          duration,
+          ease,
+          delay: getDelay(0),
         }}
       >
-        Hi my name is
+        {greeting}
       </motion.h1>
+
+      {/* Name */}
       <motion.h2
         className="hero-title-large"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
+        variants={fadeInUpVariants}
+        initial="initial"
+        animate="animate"
         transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-          delay: 0.75,
+          duration,
+          ease,
+          delay: getDelay(1),
         }}
       >
-        Samyak Ajmera
+        {name}
       </motion.h2>
+
+      {/* Tagline */}
       <motion.h3
         className="hero-title-medium hero-title-sub"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
+        variants={fadeInUpVariants}
+        initial="initial"
+        animate="animate"
         transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-          delay: 1.05,
+          duration,
+          ease,
+          delay: getDelay(2),
         }}
       >
-        I blend design, logic, and performance
+        {tagline}
       </motion.h3>
+
+      {/* Description */}
       <motion.p
         className="hero-text"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
+        variants={fadeInUpVariants}
+        initial="initial"
+        animate="animate"
         transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-          delay: 1.35,
+          duration,
+          ease,
+          delay: getDelay(3),
         }}
       >
-        I&apos;m Samyak Ajmera,a final-year B.Tech student with a deep interest in software development and AI. I enjoy turning ideas into real-world solutions through full-stack web development and love exploring how technology can simplify and improve lives. I&apos;m curious, adaptable, and always eager to learn something new.
-
+        {description}
       </motion.p>
+
+      {/* Button */}
       <motion.div
         className="hero-button"
-        initial={{ opacity: 0, y: 5 }}
-        animate={{ opacity: 1, y: 0 }}
+        variants={fadeInUpVariants}
+        initial="initial"
+        animate="animate"
         transition={{
-          duration: 0.3,
-          ease: "easeInOut",
-          delay: 1.65,
+          duration,
+          ease,
+          delay: getDelay(4),
         }}
       >
         <Button
-          text="Check out my resume"
-          link="/resume.pdf"
+          text={buttonText!}
+          link={buttonLink}
+          onClick={buttonAction}
         />
       </motion.div>
     </div>
   );
 }
+
+// Export different configurations for easy use
+export const HeroWithCustomConfig = (props: HeroProps) => {
+  const samyakConfig: HeroConfig = {
+    greeting: "Hi my name is",
+    name: "Samyak Ajmera",
+    tagline: "I blend design, logic, and performance",
+    description: "I'm Samyak Ajmera, a final-year B.Tech student with a deep interest in software development and AI. I enjoy turning ideas into real-world solutions through full-stack web development and love exploring how technology can simplify and improve lives. I'm curious, adaptable, and always eager to learn something new.",
+    buttonText: "Check out my resume",
+    buttonLink: "/resume.pdf"
+  };
+
+  return <Hero config={samyakConfig} {...props} />;
+};
+
+// Hook for easy customization
+export const useHeroConfig = (customConfig: Partial<HeroConfig>) => {
+  return { ...defaultConfig, ...customConfig };
+};
+
+// Usage examples (commented out for production)
+/*
+// Example 1: Basic usage
+<Hero />
+
+// Example 2: Custom configuration
+<Hero 
+  config={{
+    greeting: "Hello, I'm",
+    name: "John Doe",
+    tagline: "Full Stack Developer",
+    description: "I create beautiful and functional web applications...",
+    buttonText: "View My Work",
+    buttonLink: "/portfolio"
+  }}
+/>
+
+// Example 3: Custom animations
+<Hero 
+  config={{
+    name: "Jane Smith",
+    tagline: "UI/UX Designer"
+  }}
+  animationConfig={{
+    duration: 0.5,
+    ease: "easeOut",
+    staggerDelay: 0.2
+  }}
+/>
+
+// Example 4: Using the hook
+const myConfig = useHeroConfig({
+  name: "Alex Johnson",
+  tagline: "Data Scientist"
+});
+
+<Hero config={myConfig} />
+
+// Example 5: Pre-configured component
+<HeroWithCustomConfig />
+*/
 
 export default Hero;

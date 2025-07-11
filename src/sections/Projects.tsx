@@ -15,8 +15,8 @@ function Projects() {
       projectTech: [
         "React",
         "Redux Toolkit",
-        "Razorpay ",
-        "Cloudinary ",
+        "Razorpay",
+        "Cloudinary",
         "Typescript",
         "Express",
         "MongoDB"
@@ -28,14 +28,14 @@ function Projects() {
     },
     {
       image: "/project2.png",
-      projectName: "Real-Time Collaborative Text Editor ",
+      projectName: "Real-Time Collaborative Text Editor",
       projectLink: "https://text-editor-mk21.vercel.app/",
       projectDescription:
-        "A real-time collaborative text editor that lets users create organizations and work on documents together. It supports rich text formatting with custom fonts, styles, and headings. Members can edit simultaneously, with live updates and role-based permissions to control who can view or edit. Built for seamless team collaboration,but tailored for organizational workflows.",
+        "A real-time collaborative text editor that lets users create organizations and work on documents together. It supports rich text formatting with custom fonts, styles, and headings. Members can edit simultaneously, with live updates and role-based permissions to control who can view or edit. Built for seamless team collaboration, but tailored for organizational workflows.",
       projectTech: [
-        "Next JS",
+        "Next.js",
         "Tip-Tap",
-        "Shad CN",
+        "Shadcn/ui",
         "Clerk",
         "Tailwind CSS",
       ],
@@ -45,6 +45,7 @@ function Projects() {
       },
     },
   ];
+
   return (
     <div className="projects" id="work">
       <motion.div
@@ -58,73 +59,87 @@ function Projects() {
           hidden: { opacity: 0, y: 0 },
         }}
       >
-        <h2>Some Things I’ve Built</h2>
+        <h2>Some Things I've Built</h2>
       </motion.div>
+      
       <div className="projects-container">
-        {projectsData.map(
-          ({
+        {projectsData.map((project, index) => {
+          const {
             image,
             projectDescription,
             projectLink,
             projectExternalLinks,
             projectName,
             projectTech,
-          }) => {
-            return (
-              <motion.div
-                className="project"
-                key={projectName}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                transition={{ duration: 0.6 }}
-                variants={{
-                  visible: { opacity: 1, y: -50 },
-                  hidden: { opacity: 0, y: 0 },
-                }}
-              >
-                <div className="project-image">
-                  <div className="project-image-overlay"></div>
-                  <div className="project-image-container">
-                    <Image src={image} fill alt={projectName} quality={100} />
-                  </div>
+          } = project;
+          
+          return (
+            <motion.div
+              className="project"
+              key={projectName}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 50 },
+              }}
+            >
+              <div className="project-image">
+                <div className="project-image-overlay"></div>
+                <div className="project-image-container">
+                  <Image 
+                    src={image} 
+                    fill 
+                    alt={projectName} 
+                    quality={100}
+                    priority={index === 0}
+                  />
                 </div>
-                <div className="project-info">
-                  <p className="project-info-overline">Featured Project</p>
-                  <h3 className="project-info-title">{projectName}</h3>
-                  <div className="project-info-description">
-                    <p>{projectDescription}</p>
-                  </div>
-                  <ul className="project-info-tech-list">
-                    {projectTech.map((tech) => (
-                      <li className="project-info-tech-list-item" key={tech}>
-                        {tech}
-                      </li>
-                    ))}
-                  </ul>
-                  <ul className="project-info-links">
-                    <li className="project-info-links-item">
-                      <Link
-                        href={projectExternalLinks.github}
-                        className="project-info-links-item-link"
-                      >
-                        <FiGithub />
-                      </Link>
-                    </li>
-                    <li className="project-info-links-item">
-                      <Link
-                        href={projectExternalLinks.externalLink}
-                        className="project-info-links-item-link"
-                      >
-                        <FiExternalLink />
-                      </Link>
-                    </li>
-                  </ul>
+              </div>
+              
+              <div className="project-info">
+                <p className="project-info-overline">Featured Project</p>
+                <h3 className="project-info-title">{projectName}</h3>
+                <div className="project-info-description">
+                  <p>{projectDescription}</p>
                 </div>
-              </motion.div>
-            );
-          }
-        )}
+                <ul className="project-info-tech-list">
+                  {projectTech.map((tech) => (
+                    <li className="project-info-tech-list-item" key={tech}>
+                      {tech}
+                    </li>
+                  ))}
+                </ul>
+                <ul className="project-info-links">
+                  <li className="project-info-links-item">
+                    <Link
+                      href={projectExternalLinks.github}
+                      className="project-info-links-item-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`View ${projectName} on GitHub`}
+                    >
+                      <FiGithub />
+                    </Link>
+                  </li>
+                  <li className="project-info-links-item">
+                    <Link
+                      href={projectExternalLinks.externalLink}
+                      className="project-info-links-item-link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Visit ${projectName} website`}
+                    >
+                      <FiExternalLink />
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
