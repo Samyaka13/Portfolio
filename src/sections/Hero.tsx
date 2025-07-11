@@ -42,15 +42,15 @@ const defaultAnimationConfig: AnimationConfig = {
   staggerDelay: 0.15
 };
 
-function Hero({ 
-  config = {buttonLink: "/resume.pdf"}, 
-  animationConfig = {}, 
-  className = "" 
+function Hero({
+  config = { buttonLink: "/resume.pdf" },
+  animationConfig = {},
+  className = ""
 }: HeroProps) {
-  
+
   const mergedConfig = { ...defaultConfig, ...config };
   const mergedAnimationConfig = { ...defaultAnimationConfig, ...animationConfig };
-  
+
   const {
     greeting,
     name,
@@ -60,21 +60,21 @@ function Hero({
     buttonLink,
     buttonAction
   } = mergedConfig;
-  
+
   const { duration, ease, staggerDelay } = mergedAnimationConfig;
 
- 
+
   const fadeInUpVariants = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 }
   };
 
- 
+
   const getDelay = (index: number) => 0.6 + (index * staggerDelay!);
 
   return (
     <div className={`hero ${className}`}>
-     
+
       <motion.h1
         className="hero-title"
         variants={fadeInUpVariants}
@@ -89,7 +89,7 @@ function Hero({
         {greeting}
       </motion.h1>
 
- 
+
       <motion.h2
         className="hero-title-large"
         variants={fadeInUpVariants}
