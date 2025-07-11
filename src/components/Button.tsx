@@ -1,10 +1,31 @@
 import Link from "next/link";
 import React from "react";
 
-function Button({ text, link }: { text: string; link: string }) {
-  return (
-    <Link className="btn" target="_blank" href={link}  rel="noopener noreferrer" download>
+interface ButtonProps {
+  text: string;
+  link: string;
+  onClick?: () => void;
+}
+
+function Button({ text, link, onClick }: ButtonProps) {
+  const isExternal = link.startsWith("http") || link.endsWith(".pdf");
+
+  return isExternal ? (
+    <a
+      className="btn"
+      href={link}
+      onClick={onClick}
+      target="_blank"
+      rel="noopener noreferrer"
+      download={link.endsWith(".pdf") ? true : undefined}
+    >
       {text}
+    </a>
+  ) : (
+    <Link href={link} legacyBehavior>
+      <a className="btn" onClick={onClick}>
+        {text}
+      </a>
     </Link>
   );
 }

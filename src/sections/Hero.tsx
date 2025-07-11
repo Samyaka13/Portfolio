@@ -47,7 +47,7 @@ function Hero({
   animationConfig = {}, 
   className = "" 
 }: HeroProps) {
-  // Merge configs with defaults
+  
   const mergedConfig = { ...defaultConfig, ...config };
   const mergedAnimationConfig = { ...defaultAnimationConfig, ...animationConfig };
   
@@ -63,18 +63,18 @@ function Hero({
   
   const { duration, ease, staggerDelay } = mergedAnimationConfig;
 
-  // Animation variants for reusability
+ 
   const fadeInUpVariants = {
     initial: { opacity: 0, y: 20 },
     animate: { opacity: 1, y: 0 }
   };
 
-  // Calculate delays based on stagger
+ 
   const getDelay = (index: number) => 0.6 + (index * staggerDelay!);
 
   return (
     <div className={`hero ${className}`}>
-      {/* Greeting */}
+     
       <motion.h1
         className="hero-title"
         variants={fadeInUpVariants}
@@ -89,7 +89,7 @@ function Hero({
         {greeting}
       </motion.h1>
 
-      {/* Name */}
+ 
       <motion.h2
         className="hero-title-large"
         variants={fadeInUpVariants}
