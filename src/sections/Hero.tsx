@@ -51,7 +51,8 @@ function Hero() {
           delay: 1.35,
         }}
       >
-        I&apos;m Samyak Ajmera, a final-year B.Tech student with a deep interest in software development and AI. I enjoy turning ideas into real-world solutions through full-stack web development and love exploring how technology can simplify and improve lives. I'm curious, adaptable, and always eager to learn something new.
+        I&apos;m Samyak Ajmera,a final-year B.Tech student with a deep interest in software development and AI. I enjoy turning ideas into real-world solutions through full-stack web development and love exploring how technology can simplify and improve lives. I&apos;m curious, adaptable, and always eager to learn something new.
+
       </motion.p>
       <motion.div
         className="hero-button"
