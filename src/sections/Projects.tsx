@@ -9,7 +9,7 @@ function Projects() {
     {
       image: "/project1.png",
       projectName: "GS Academia",
-      projectLink: "https://gs-acadmia-frontend.vercel.app/",
+      projectLink: "https://gs-acadmia-frontend.vercel.app",
       projectDescription:
         "GS Academia is at the forefront of driving innovation in online education. We're passionate about creating a brighter future by offering cutting-edge courses, leveraging emerging technologies, and nurturing a vibrant learning community.",
       projectTech: [
