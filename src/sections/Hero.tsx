@@ -134,7 +134,6 @@ function Hero({
         {description}
       </motion.p>
 
-      {/* Button */}
       <motion.div
         className="hero-button"
         variants={fadeInUpVariants}
