@@ -29,7 +29,7 @@ interface HeroProps {
 // Default configuration
 const defaultConfig: HeroConfig = {
   greeting: "Hi my name is",
-  name: "Your Name",
+  name: "Samyak Ajmera",
   tagline: "I blend design, logic, and performance",
   description: "I'm a passionate developer who loves creating amazing digital experiences. I enjoy turning ideas into real-world solutions through full-stack web development and love exploring how technology can simplify and improve lives.",
   buttonText: "Check out my resume",
