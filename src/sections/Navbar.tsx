@@ -62,7 +62,7 @@ function Navbar() {
             ease: "easeInOut",
           }}
         >
-          <Link href="samyak.com">
+          <Link href="https://portfolio-git-main-samyaks-projects-ed9cd86e.vercel.app/">
             <Logo />
           </Link>
         </motion.div>
