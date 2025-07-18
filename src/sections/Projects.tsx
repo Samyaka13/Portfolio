@@ -3,11 +3,13 @@ import Link from "next/link";
 import React from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
+import project1 from "../../public/project1.png";
+import project2 from "../../public/project2.png"; // Import the second image too
 
 function Projects() {
   const projectsData = [
     {
-      image: "/project1.png",
+      image: project1, // Use imported image
       projectName: "GS Academia",
       projectLink: "https://gs-acadmia-frontend.vercel.app",
       projectDescription:
@@ -27,7 +29,7 @@ function Projects() {
       },
     },
     {
-      image: "/project2.png",
+      image: project2, // Use imported image instead of string
       projectName: "Real-Time Collaborative Text Editor",
       projectLink: "https://text-editor-mk21.vercel.app/",
       projectDescription:
@@ -85,7 +87,13 @@ function Projects() {
                 hidden: { opacity: 0, y: 50 },
               }}
             >
-              <div className="project-image">
+              <Link
+                href={projectExternalLinks.externalLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project-image"
+                aria-label={`Visit ${projectName} website`}
+              >
                 <div className="project-image-overlay"></div>
                 <div className="project-image-container">
                   <Image
@@ -95,9 +103,10 @@ function Projects() {
                     quality={100}
                     priority={index === 0}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                    style={{ objectFit: 'cover' }} // Add this for better image handling
                   />
                 </div>
-              </div>
+              </Link>
 
               <div className="project-info">
                 <p className="project-info-overline">Featured Project</p>
