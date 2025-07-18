@@ -60,23 +60,21 @@ function Projects() {
         }}
       >
         <h2>Some Things I&apos;ve Built</h2>
-
       </motion.div>
-      
+
       <div className="projects-container">
         {projectsData.map((project, index) => {
           const {
             image,
             projectDescription,
-            projectLink,
             projectExternalLinks,
             projectName,
             projectTech,
           } = project;
-          
+
           return (
             <motion.div
-              className="project"
+              className={`project ${index % 2 === 1 ? 'project-reverse' : ''}`}
               key={projectName}
               initial="hidden"
               whileInView="visible"
@@ -90,16 +88,17 @@ function Projects() {
               <div className="project-image">
                 <div className="project-image-overlay"></div>
                 <div className="project-image-container">
-                  <Image 
-                    src={image} 
-                    fill 
-                    alt={projectName} 
+                  <Image
+                    src={image}
+                    fill
+                    alt={projectName}
                     quality={100}
                     priority={index === 0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                   />
                 </div>
               </div>
-              
+
               <div className="project-info">
                 <p className="project-info-overline">Featured Project</p>
                 <h3 className="project-info-title">{projectName}</h3>
