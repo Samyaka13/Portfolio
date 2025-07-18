@@ -151,10 +151,14 @@
         .overlay {
           height: 300px;
           width: 300px;
+          background-color: transparent; /* Remove initial purple background on mobile */
         }
         &-container {
           height: 300px;
           width: 300px;
+          img {
+            filter: none; /* Remove grayscale on mobile */
+          }
         }
       }
       &-info {
@@ -181,10 +185,14 @@
         .overlay {
           height: 223px;
           width: 223px;
+          background-color: transparent; /* Remove initial purple background on mobile */
         }
         &-container {
           height: 223px;
           width: 223px;
+          img {
+            filter: none; /* Remove grayscale on mobile */
+          }
         }
       }
     }
