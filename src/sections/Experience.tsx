@@ -13,30 +13,42 @@ function Experience() {
   }, [selected]);
 
   const expereinces = [
-    {
-      name: "Pixel Tech",
-      role: "Front-end Developer",
-      start: "May 2025",
-      end: "July 2025",
-      shortDescription: [
-        "During my software development internship, I played a key role in enhancing our company's product by developing its frontend.",
-        "Using React, I built and maintained a responsive and intuitive user interface..",
-        "My work included integrating multiple APIs, managing application state with Redux.",
-        "Utilizing various component libraries to deliver a fully functional and seamless user experience.",
-      ],
-    },
-    {
-      name: "ListApp PharmaTech",
-      role: "Web Developer",
-      start: "April 2024",
-      end: "May 2024",
-      shortDescription: [
-        "Led the design and development of a modern, responsive branding website from scratch, helping the startup establish its online presence and credibility.",
-        "Transformed vague business goals into a live product, independently managing everything from UI/UX decisions to deployment ",
-      ],
-    },
+  {
+    name: "Dice Enterprises",
+    role: "Software Development Engineer Intern",
+    start: "Jan 2026",
+    end: "Present",
+    shortDescription: [
+      "Working at a product-based enterprise SaaS company building scalable solutions for corporate spend management and procurement workflows.",
+      "Contributing to a production React Native mobile application, understanding real-world mobile architecture and cross-platform patterns.",
+      "Performed exploratory and regression testing to identify UI inconsistencies, edge cases, and functional bugs in mobile features.",
+      "Reviewed and analyzed the corresponding web application to understand shared APIs, business logic, and data contracts across platforms.",
+    ],
+  },
+  {
+    name: "PixelTech",
+    role: "Software Development Engineer Intern",
+    start: "May 2025",
+    end: "Aug 2025",
+    shortDescription: [
+      "Built and maintained scalable, responsive user interfaces using React.js for client-facing products and internal dashboards.",
+      "Implemented reusable UI components and improved performance in production-grade applications.",
+      "Worked with modern state management tools including TanStack Query and Redux to manage server state and application logic.",
+      "Customized and integrated component libraries such as Chakra UI and Shadcn UI to maintain consistent design systems.",
+    ],
+  },
+  {
+    name: "ListApp PharmaTech",
+    role: "Web Developer",
+    start: "Apr 2024",
+    end: "May 2024",
+    shortDescription: [
+      "Designed and developed a responsive branding website from scratch to establish the startup’s online presence.",
+      "Independently translated business requirements into UI/UX decisions, implementation, and deployment.",
+    ],
+  },
+];
 
-  ];
   return (
     <motion.div
       className="experience"
