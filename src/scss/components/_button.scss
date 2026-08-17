@@ -1,15 +1,31 @@
 .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0.7rem 1rem;
   color: var(--theme-color);
-  padding: 0.75em 1em;
   text-decoration: none;
-  border: 1px solid var(--theme-color);
-  border-radius: 4px;
-  background-color: transparent;
-  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-  font-size: var(--tsm);
+  border: 1px solid #9edbd1;
+  border-radius: 0.65rem;
+  background: #fff;
+  font-family: var(--raleway), system-ui, sans-serif;
+  font-size: 0.88rem;
+  font-weight: 650;
   outline: none;
+  box-shadow: 0 5px 16px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+
   &:hover,
   &:focus {
-    background-color: var(--lightest-navy);
+    background: #f0fdfa;
+    color: #115e59;
+    transform: translateY(-2px);
+    box-shadow: 0 9px 22px rgba(15, 23, 42, 0.08);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--theme-color);
+    outline-offset: 3px;
   }
 }
