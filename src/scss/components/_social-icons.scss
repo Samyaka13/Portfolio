@@ -1,52 +1,47 @@
 .social-icons {
   position: fixed;
   bottom: 0;
-  left: 4rem;
+  left: 2rem;
+  z-index: 5;
+
   &-list {
-    list-style-type: none;
+    list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.35rem;
+
     &-item {
       font-size: var(--tlarge2);
-      transition: 0.3s ease-in-out;
       display: flex;
       justify-content: center;
       align-items: center;
+      transition: transform 0.2s ease;
+
       &-link {
-        padding: 10px;
-        color: var(--lightest-slate);
-        transition: 0.3s ease-in-out;
-        outline: 2px dashed transparent;
-        &:hover {
-          color: var(--theme-color);
-        }
+        padding: 8px;
+        color: #64748b;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover,
         &:focus {
-          outline-color: var(--theme-color);
-          transform: translateY(-4px);
           color: var(--theme-color);
+          transform: translateY(-3px);
+          outline: none;
         }
       }
-      &:hover {
-        transform: translateY(-4px);
-      }
-      &:last-child {
-        margin-bottom: 2rem;
-      }
+
+      &:last-child { margin-bottom: 1.2rem; }
     }
+
     &::after {
       content: "";
       display: block;
-      width: 2px;
-      height: 90px;
-      margin: 0px auto;
-      background-color: var(--light-slate);
+      width: 1px;
+      height: 70px;
+      margin: 0 auto;
+      background: #cbd5e1;
     }
   }
-  @media screen and (max-width: 1080px) {
-    left: 2rem;
-  }
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
+
+  @media screen and (max-width: 900px) { display: none; }
 }
