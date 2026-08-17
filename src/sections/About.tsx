@@ -83,7 +83,7 @@ function About() {
           <div className="overlay-border"></div>
           <div className="about-grid-photo-container">
             <Image
-              src="/PP.jpg"
+              src="/PP.jpeg"
               alt="Samyak Ajmera"
               fill
               priority
