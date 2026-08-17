@@ -24,19 +24,20 @@ function About() {
         {/* INFO */}
         <div className="about-grid-info">
           <p className="about-grid-info-text">
-            I&apos;m <strong>Samyak Ajmera</strong>, an Electrical Engineering
+            I&apos;m <strong>Samyak Ajmera</strong>, an Engineering
             undergraduate at SGSITS Indore and a{" "}
-            <strong>Software Development Engineer Intern</strong> focused on
+            <strong>Software Development Engineer</strong> focused on
             building reliable, production-grade web, mobile, and AI-driven
             systems.
           </p>
 
           <p className="about-grid-info-text">
             My work bridges full-stack engineering, mobile development, and
-            applied AI. Rather than building shallow LLM wrappers, I focus on{" "}
-            <strong>backend-first architectures</strong> — asynchronous
-            workers, message queues, state machines, and semantic
-            retrieval — to solve concrete product problems.
+            applied AI. Rather than building shallow LLM wrappers or
+            surface-level prototypes, I focus on{" "}
+            <strong>backend-first architectures</strong> that integrate
+            asynchronous workers, message queues, state machines, and
+            semantic retrieval to solve concrete product problems.
           </p>
 
           <p className="about-grid-info-text">
@@ -51,15 +52,23 @@ function About() {
           <p className="about-grid-info-text">
             On the backend, I architect decoupled services with{" "}
             <strong>Node.js</strong>, Express, and MongoDB, implementing
-            secure JWT authentication and offloading compute-heavy workflows
-            with Redis and BullMQ.
+            secure JWT authentication, robust data validation, and
+            asynchronous task processing with Redis and BullMQ to offload
+            compute-heavy workflows.
           </p>
 
           <p className="about-grid-info-text">
-            In AI, I build agentic tooling with{" "}
-            <strong>LangChain and LangGraph</strong> — multi-agent routing
-            networks, human-in-the-loop execution gates, and semantic search
-            pipelines over vector embeddings.
+            In AI, I build agentic tooling and developer assistants with{" "}
+            <strong>LangChain, LangGraph, and the Google Gemini API</strong> —
+            multi-agent routing networks, state machines with human-in-the-loop
+            execution gates, and semantic search pipelines over vector
+            embeddings.
+          </p>
+
+          <p className="about-grid-info-text">
+            I also have a strong foundation in Data Structures, Algorithms,
+            and object-oriented design in Java, with an emphasis on code
+            efficiency, system modularity, and algorithmic problem-solving.
           </p>
 
           <p className="about-grid-info-text">
@@ -71,6 +80,7 @@ function About() {
             <li className="about-grid-info-list-item">TypeScript</li>
             <li className="about-grid-info-list-item">JavaScript</li>
             <li className="about-grid-info-list-item">Java</li>
+            <li className="about-grid-info-list-item">SQL</li>
 
             {/* Frontend & Mobile */}
             <li className="about-grid-info-list-item">React</li>
@@ -80,18 +90,26 @@ function About() {
             <li className="about-grid-info-list-item">Redux Toolkit</li>
             <li className="about-grid-info-list-item">TanStack Query</li>
 
-            {/* Backend */}
+            {/* Backend & Databases */}
             <li className="about-grid-info-list-item">Node.js</li>
             <li className="about-grid-info-list-item">Express.js</li>
-            <li className="about-grid-info-list-item">MongoDB</li>
+            <li className="about-grid-info-list-item">MongoDB (Mongoose)</li>
             <li className="about-grid-info-list-item">Redis & BullMQ</li>
-            <li className="about-grid-info-list-item">JWT Auth</li>
+            <li className="about-grid-info-list-item">JWT Authentication</li>
 
             {/* AI & Agentic */}
             <li className="about-grid-info-list-item">LangGraph</li>
             <li className="about-grid-info-list-item">LangChain</li>
-            <li className="about-grid-info-list-item">Gemini API</li>
+            <li className="about-grid-info-list-item">Google Gemini API</li>
             <li className="about-grid-info-list-item">Vector Embeddings</li>
+
+            {/* Tools & Platforms */}
+            <li className="about-grid-info-list-item">Git</li>
+            <li className="about-grid-info-list-item">Postman</li>
+            <li className="about-grid-info-list-item">Cursor</li>
+            <li className="about-grid-info-list-item">Xcode</li>
+            <li className="about-grid-info-list-item">Vercel</li>
+            <li className="about-grid-info-list-item">Cloudinary</li>
           </ul>
         </div>
 
