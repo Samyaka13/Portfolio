@@ -1,9 +1,12 @@
 import "@/scss/globals.css";
 import "@/scss/index.scss";
 import type { AppProps } from "next/app";
-import { Raleway, Fira_Code } from "next/font/google";
+import { Inter, Fira_Code } from "next/font/google";
 
-const raleway = Raleway({ subsets: ["latin"] });
+const raleway = Inter({
+  weight: ["400", "500", "600", "700", "800"],
+  subsets: ["latin"],
+});
 const firaCode = Fira_Code({
   weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],

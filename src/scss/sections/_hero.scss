@@ -125,19 +125,19 @@
       font-size: var(--tsm1, 1rem);
       font-family: var(--fira-code, 'Fira Code', 'Courier New', monospace);
       background: transparent;
-      border: 2px solid var(--theme-color, #64ffda);
-      color: var(--theme-color, #64ffda);
-      border-radius: 4px;
+      border: 1.5px solid var(--theme-color);
+      color: var(--theme-color);
+      border-radius: 8px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: all 0.2s ease;
       text-decoration: none;
       display: inline-block;
       font-weight: 500;
       
       &:hover {
-        background: var(--theme-color-hover, rgba(100, 255, 218, 0.1));
+        background: var(--theme-color-soft);
         transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba(100, 255, 218, 0.2);
+        box-shadow: var(--card-shadow-hover);
       }
       
       &:active {
@@ -179,55 +179,14 @@
   }
 }
 
-// CSS Custom Properties (CSS Variables) - Default Values
+// Responsive size tokens used above (theme colors live in globals.css)
 :root {
-  // Theme colors
-  --theme-color: #64ffda;
-  --theme-color-hover: rgba(100, 255, 218, 0.1);
-  --light-slate: #ccd6f6;
-  --slate: #8892b0;
-  --lightest-slate: #a8b2d1;
-  
-  // Font families
-  --fira-code: 'Fira Code', 'Courier New', monospace;
-  --raleway: 'Raleway', 'Arial', sans-serif;
-  
-  // Font sizes - Mobile first approach
-  --tsm: 0.875rem;      // 14px
-  --tsm1: 1rem;         // 16px
-  --tsm2: 1.125rem;     // 18px
-  --tsm3: 1.25rem;      // 20px
-  --tmedium: 1rem;      // 16px
-  --tlarge: 1.125rem;   // 18px
-  --txlarge: 1.5rem;    // 24px
-  --txxlarge: 2rem;     // 32px
-  --txxxlarge: 2.5rem;  // 40px
-  --tbig: 3rem;         // 48px
-  --tbig-lg: 3.5rem;    // 56px
-  --tbig-xl: 4rem;      // 64px
-  --tgiant: 4rem;       // 64px
-  --tgiant-lg: 5rem;    // 80px
-  --tgiant-xl: 6rem;    // 96px
-  
-  // Responsive breakpoints (for reference)
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-}
-
-// Dark theme variables (optional)
-[data-theme="dark"] {
-  --theme-color: #64ffda;
-  --light-slate: #ccd6f6;
-  --slate: #8892b0;
-  --lightest-slate: #a8b2d1;
-}
-
-// Light theme variables (optional)
-[data-theme="light"] {
-  --theme-color: #2563eb;
-  --light-slate: #1e293b;
-  --slate: #475569;
-  --lightest-slate: #64748b;
+  --tsm3: 1.25rem;
+  --tmedium: 1rem;
+  --txxlarge: 2rem;
+  --txxxlarge: 2.5rem;
+  --tbig-lg: 3.5rem;
+  --tbig-xl: 4rem;
+  --tgiant-lg: 5rem;
+  --tgiant-xl: 6rem;
 }

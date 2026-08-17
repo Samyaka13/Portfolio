@@ -22,11 +22,11 @@ nav {
         outline: 2px dashed transparent;
         transition: 0.3s ease-in-out;
         &:hover {
-          fill: #64fad91a;
+          fill: var(--theme-color-soft);
         }
         &:focus {
           outline-color: var(--theme-color);
-          fill: #64fad91a;
+          fill: var(--theme-color-soft);
         }
       }
     }
@@ -90,7 +90,9 @@ nav {
         visibility: hidden;
         top: 0;
         padding: 50px 10px;
-        background-color: var(--light-navy);
+        background-color: var(--surface-color);
+        border-left: 1px solid var(--border-color);
+        box-shadow: var(--card-shadow-hover);
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -114,8 +116,9 @@ nav {
     top: 0;
     transition: 0.3s ease-in-out;
     z-index: 100;
-    background-color: rgba(10, 25, 47, 0.85);
-    box-shadow: 0 10px 30px -10px var(--navy-shadow);
+    background-color: rgba(250, 249, 246, 0.85);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--card-shadow);
     backdrop-filter: blur(10px);
   }
 }
