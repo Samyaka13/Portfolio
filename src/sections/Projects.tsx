@@ -34,8 +34,8 @@ function Projects() {
       image: "/devai-copilot.svg",
       projectName: "DevAI Copilot",
       projectDescription:
-        "An AI-powered developer copilot designed to help developers understand, generate, and work with code through an integrated AI-assisted workflow.",
-      projectTech: ["Next.js", "TypeScript", "AI", "Developer Tools"],
+        "A modular TypeScript AI developer assistant using LangGraph orchestration and specialized agents for codebase exploration, semantic understanding, execution, and chat, with human approval for sensitive actions.",
+      projectTech: ["TypeScript", "LangGraph", "LangChain", "Node.js", "AI"],
       projectExternalLinks: {
         github: "https://github.com/Samyaka13/devai-copilot",
         externalLink: "https://github.com/Samyaka13/devai-copilot",
