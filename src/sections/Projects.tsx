@@ -4,46 +4,42 @@ import React from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import project1 from "../../public/project1.png";
-import project2 from "../../public/project2.png"; // Import the second image too
+import project2 from "../../public/project2.png";
+import devAiCopilot from "../../public/devai-copilot.svg";
 
 function Projects() {
   const projectsData = [
     {
-      image: project1, // Use imported image
+      image: project1,
       projectName: "GS Academia",
-      projectLink: "https://gs-acadmia-frontend.vercel.app",
       projectDescription:
-        "GS Academia is at the forefront of driving innovation in online education. We're passionate about creating a brighter future by offering cutting-edge courses, leveraging emerging technologies, and nurturing a vibrant learning community.",
-      projectTech: [
-        "React",
-        "Redux Toolkit",
-        "Razorpay",
-        "Cloudinary",
-        "Typescript",
-        "Express",
-        "MongoDB"
-      ],
+        "A full-stack learning platform for online courses, payments, reviews, and media management, built to provide a practical and engaging learning experience.",
+      projectTech: ["React", "Redux Toolkit", "Razorpay", "Cloudinary", "TypeScript", "Express", "MongoDB"],
       projectExternalLinks: {
         github: "https://github.com/Samyaka13/GS-Acadmia",
         externalLink: "https://gs-acadmia-frontend.vercel.app/",
       },
     },
     {
-      image: project2, // Use imported image instead of string
+      image: project2,
       projectName: "Real-Time Collaborative Text Editor",
-      projectLink: "https://text-editor-mk21.vercel.app/",
       projectDescription:
-        "A real-time collaborative text editor that lets users create organizations and work on documents together. It supports rich text formatting with custom fonts, styles, and headings. Members can edit simultaneously, with live updates and role-based permissions to control who can view or edit. Built for seamless team collaboration, but tailored for organizational workflows.",
-      projectTech: [
-        "Next.js",
-        "Tip-Tap",
-        "Shadcn/ui",
-        "Clerk",
-        "Tailwind CSS",
-      ],
+        "A real-time collaborative editor where teams can create organizations, work on rich-text documents simultaneously, and manage role-based viewing and editing permissions.",
+      projectTech: ["Next.js", "Tiptap", "Shadcn/ui", "Clerk", "Tailwind CSS"],
       projectExternalLinks: {
         github: "https://github.com/Samyaka13/Text-Editor",
         externalLink: "https://text-editor-mk21.vercel.app/",
+      },
+    },
+    {
+      image: devAiCopilot,
+      projectName: "DevAI Copilot",
+      projectDescription:
+        "An AI-powered developer copilot designed to help developers understand, generate, and work with code through an integrated AI-assisted workflow.",
+      projectTech: ["Next.js", "TypeScript", "AI", "Developer Tools"],
+      projectExternalLinks: {
+        github: "https://github.com/Samyaka13/devai-copilot",
+        externalLink: "https://github.com/Samyaka13/devai-copilot",
       },
     },
   ];
@@ -66,22 +62,16 @@ function Projects() {
 
       <div className="projects-container">
         {projectsData.map((project, index) => {
-          const {
-            image,
-            projectDescription,
-            projectExternalLinks,
-            projectName,
-            projectTech,
-          } = project;
+          const { image, projectDescription, projectExternalLinks, projectName, projectTech } = project;
 
           return (
             <motion.div
-              className={`project ${index % 2 === 1 ? 'project-reverse' : ''}`}
+              className={`project ${index % 2 === 1 ? "project-reverse" : ""}`}
               key={projectName}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
               variants={{
                 visible: { opacity: 1, y: 0 },
                 hidden: { opacity: 0, y: 50 },
@@ -92,9 +82,9 @@ function Projects() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="project-image"
-                aria-label={`Visit ${projectName} website`}
+                aria-label={`Visit ${projectName}`}
               >
-                <div className="project-image-overlay"></div>
+                <div className="project-image-overlay" />
                 <div className="project-image-container">
                   <Image
                     src={image}
@@ -103,7 +93,7 @@ function Projects() {
                     quality={100}
                     priority={index === 0}
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
-                    style={{ objectFit: 'cover' }} // Add this for better image handling
+                    style={{ objectFit: "cover" }}
                   />
                 </div>
               </Link>
@@ -139,7 +129,7 @@ function Projects() {
                       className="project-info-links-item-link"
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Visit ${projectName} website`}
+                      aria-label={`Visit ${projectName}`}
                     >
                       <FiExternalLink />
                     </Link>
