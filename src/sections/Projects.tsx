@@ -5,6 +5,7 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import project1 from "../../public/project1.png";
 import project2 from "../../public/project2.png"; // Import the second image too
+import project4 from "../../public/project4.png"; // DevAI Copilot cover
 
 function Projects() {
   const projectsData = [
@@ -26,6 +27,26 @@ function Projects() {
       projectExternalLinks: {
         github: "https://github.com/Samyaka13/GS-Acadmia",
         externalLink: "https://gs-acadmia-frontend.vercel.app/",
+      },
+    },
+    {
+      image: project4,
+      projectName: "DevAI Copilot",
+      projectLink: "https://github.com/Samyaka13/devai-copilot",
+      projectDescription:
+        "An open-source, TypeScript CLI developer assistant built on a LangGraph state machine. A manager agent routes each request to a Semantic RAG agent, a File Explorer agent, or a ReAct agent for execution, with human-in-the-loop approval gating sensitive tool calls like writing files or running git commands. On startup it chunks and embeds the target codebase into an in-memory vector store to ground its answers in the actual repo.",
+      projectTech: [
+        "TypeScript",
+        "LangGraph",
+        "LangChain",
+        "Node.js",
+        "Vector Embeddings",
+        "Gemini API",
+        "Ollama",
+      ],
+      projectExternalLinks: {
+        github: "https://github.com/Samyaka13/devai-copilot",
+        externalLink: "https://github.com/Samyaka13/devai-copilot",
       },
     },
     {
