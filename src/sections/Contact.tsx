@@ -18,7 +18,7 @@ function Contact() {
       <h1 className="contact-title">What&apos;s Next?</h1>
       <h2 className="contact-sub-title">Get In Touch</h2>
       <p className="contact-text">
-        💼 I&apos;m actively seeking SDE internship and full-time opportunities in full-stack web development. Let&apos;s connect and build something impactful!
+        💼 I&apos;m actively seeking SDE full-time opportunities in full-stack web development. Let&apos;s connect and build something impactful!
       </p>
       <div className="contact-cta">
         <Button link="mailto:samyakajmera022@gmail.com" text="Say Hello" />
