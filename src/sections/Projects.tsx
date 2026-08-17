@@ -5,7 +5,6 @@ import { FiGithub, FiExternalLink } from "react-icons/fi";
 import { motion } from "framer-motion";
 import project1 from "../../public/project1.png";
 import project2 from "../../public/project2.png";
-import devAiCopilot from "../../public/devai-copilot.svg";
 
 function Projects() {
   const projectsData = [
@@ -32,7 +31,7 @@ function Projects() {
       },
     },
     {
-      image: devAiCopilot,
+      image: "/devai-copilot.svg",
       projectName: "DevAI Copilot",
       projectDescription:
         "An AI-powered developer copilot designed to help developers understand, generate, and work with code through an integrated AI-assisted workflow.",
