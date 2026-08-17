@@ -24,43 +24,59 @@ function About() {
         {/* INFO */}
         <div className="about-grid-info">
           <p className="about-grid-info-text">
-            I’m <strong>Samyak Ajmera</strong>, a final-year engineering student
-            working as a <strong>Software Development Engineer Intern</strong>,
-            focused on building production-grade web and mobile applications.
+            I&apos;m <strong>Samyak Ajmera</strong>, an Electrical Engineering
+            undergraduate at SGSITS Indore and a{" "}
+            <strong>Software Development Engineer Intern</strong> focused on
+            building reliable, production-grade web, mobile, and AI-driven
+            systems.
           </p>
 
           <p className="about-grid-info-text">
-            My recent work spans <strong>React Native mobile apps</strong> and
-            full-stack systems where I collaborate with backend APIs, shared
-            business logic, and real-world product workflows. I care about clean
-            architecture, maintainability, and performance — not just UI.
+            My work bridges full-stack engineering, mobile development, and
+            applied AI. Rather than building shallow LLM wrappers, I focus on{" "}
+            <strong>backend-first architectures</strong> — asynchronous
+            workers, message queues, state machines, and semantic
+            retrieval — to solve concrete product problems.
           </p>
 
           <p className="about-grid-info-text">
-            On the backend, I’ve built systems using Node.js and MongoDB,
-            implemented JWT-based authentication, background job processing with
-            Redis, and integrated AI services to solve practical problems like
-            resume analysis and automation.
+            On the frontend, I design responsive, maintainable applications
+            across web and mobile with <strong>React</strong>,{" "}
+            <strong>React Native</strong>, and{" "}
+            <strong>Next.js (App Router)</strong>, prioritizing clean
+            component architecture and predictable state management with
+            Redux Toolkit and TanStack Query.
           </p>
 
           <p className="about-grid-info-text">
-            Lately, I’ve been exploring how <strong>AI fits into real products</strong>
-            — designing backend-first systems that use LLMs, queues, and async
-            workers rather than surface-level AI demos.
+            On the backend, I architect decoupled services with{" "}
+            <strong>Node.js</strong>, Express, and MongoDB, implementing
+            secure JWT authentication and offloading compute-heavy workflows
+            with Redis and BullMQ.
           </p>
 
           <p className="about-grid-info-text">
-            Technologies I’ve been working with recently:
+            In AI, I build agentic tooling with{" "}
+            <strong>LangChain and LangGraph</strong> — multi-agent routing
+            networks, human-in-the-loop execution gates, and semantic search
+            pipelines over vector embeddings.
+          </p>
+
+          <p className="about-grid-info-text">
+            Technologies I&apos;ve been working with recently:
           </p>
 
           <ul className="about-grid-info-list">
-            {/* Frontend */}
+            {/* Languages */}
+            <li className="about-grid-info-list-item">TypeScript</li>
+            <li className="about-grid-info-list-item">JavaScript</li>
+            <li className="about-grid-info-list-item">Java</li>
+
+            {/* Frontend & Mobile */}
             <li className="about-grid-info-list-item">React</li>
             <li className="about-grid-info-list-item">React Native</li>
             <li className="about-grid-info-list-item">Next.js (App Router)</li>
-            <li className="about-grid-info-list-item">TypeScript</li>
-
-            {/* State & Data */}
+            <li className="about-grid-info-list-item">Tailwind CSS</li>
             <li className="about-grid-info-list-item">Redux Toolkit</li>
             <li className="about-grid-info-list-item">TanStack Query</li>
 
@@ -69,11 +85,13 @@ function About() {
             <li className="about-grid-info-list-item">Express.js</li>
             <li className="about-grid-info-list-item">MongoDB</li>
             <li className="about-grid-info-list-item">Redis & BullMQ</li>
-
-            {/* Infra & Tools */}
             <li className="about-grid-info-list-item">JWT Auth</li>
-            <li className="about-grid-info-list-item">Cloudinary</li>
-            <li className="about-grid-info-list-item">REST APIs</li>
+
+            {/* AI & Agentic */}
+            <li className="about-grid-info-list-item">LangGraph</li>
+            <li className="about-grid-info-list-item">LangChain</li>
+            <li className="about-grid-info-list-item">Gemini API</li>
+            <li className="about-grid-info-list-item">Vector Embeddings</li>
           </ul>
         </div>
 

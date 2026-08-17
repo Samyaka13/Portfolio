@@ -44,24 +44,26 @@
         font-family: var(--raleway);
       }
       &-list {
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
         list-style-type: none;
-        padding: 0 3rem;
+        padding: 0;
+        margin-top: 0.5rem;
         &-item {
-          font-family: var(--raleway);
-          line-height: 1.6rem;
+          font-family: var(--fira-code);
+          line-height: 1.4;
           font-weight: 500;
-          font-size: var(--tbase);
-          color: var(--slate);
-          position: relative;
-          &::before {
-            content: "▹";
-            position: absolute;
-            left: -20px;
-            top: 6px;
-            color: var(--theme-color);
-            line-height: 12px;
+          font-size: var(--tsm1);
+          color: var(--light-slate);
+          background-color: var(--theme-color-soft);
+          border: 1px solid var(--border-color);
+          border-radius: 999px;
+          padding: 0.4rem 0.9rem;
+          transition: 0.2s ease-in-out;
+          &:hover {
+            border-color: var(--theme-color);
+            transform: translateY(-2px);
           }
         }
       }
@@ -131,7 +133,7 @@
       }
       &-info {
         &-list {
-          grid-template-columns: 1fr;
+          gap: 0.5rem;
         }
       }
     }
