@@ -8,9 +8,7 @@
   --txlarge: 25px;
   --tx2large: 32px;
   --tgiant: clamp(40px, 8vw, 80px);
-  --tbig:clamp(35px,6vw,80px);
-  @media screen and (max-width: 480px) {
-    --tx2large: 25px;
-    // --tgiant: 40px;
-  }
+  --tbig: clamp(35px, 6vw, 80px);
+  --raleway: "Inter", "Avenir Next", "Segoe UI", sans-serif;
+  --fira-code: "SF Mono", "Fira Code", "Roboto Mono", monospace;
 }
