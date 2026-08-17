@@ -1,15 +1,38 @@
 .btn {
   color: var(--theme-color);
-  padding: 0.75em 1em;
+  padding: 0.8em 1.4em;
   text-decoration: none;
   border: 1px solid var(--theme-color);
-  border-radius: 4px;
+  border-radius: 8px;
   background-color: transparent;
   font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
   font-size: var(--tsm);
+  font-weight: 500;
   outline: none;
+  transition: 0.2s ease-in-out;
   &:hover,
   &:focus {
-    background-color: var(--lightest-navy);
+    background-color: var(--theme-color-soft);
+    transform: translateY(-1px);
+  }
+}
+
+.btn-solid {
+  color: #fff;
+  padding: 0.8em 1.4em;
+  text-decoration: none;
+  border: 1px solid var(--theme-color);
+  border-radius: 8px;
+  background-color: var(--theme-color);
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+  font-size: var(--tsm);
+  font-weight: 500;
+  outline: none;
+  transition: 0.2s ease-in-out;
+  &:hover,
+  &:focus {
+    background-color: var(--theme-color-hover);
+    border-color: var(--theme-color-hover);
+    transform: translateY(-1px);
   }
 }

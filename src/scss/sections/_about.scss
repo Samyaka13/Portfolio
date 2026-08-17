@@ -22,7 +22,7 @@
         width: 300px;
         height: 2px;
         margin-left: 220px;
-        background-color: var(--lightest-navy);
+        background-color: var(--border-color-strong);
       }
     }
   }
@@ -88,8 +88,8 @@
         position: absolute;
         height: 350px;
         width: 350px;
-        background-color: #9d00ff4d;
-        border-radius: 0.2rem;
+        background-color: var(--theme-color-soft);
+        border-radius: 0.5rem;
       }
       .overlay-border {
         z-index: -3;
@@ -99,7 +99,7 @@
         border: 2px solid var(--theme-color);
         top: 1rem;
         left: 1rem;
-        border-radius: 0.2rem;
+        border-radius: 0.5rem;
         transition: 0.3s ease-in-out;
       }
       &-container {
@@ -111,7 +111,7 @@
           z-index: 0;
           filter: grayscale(100%);
           transition: 0.3s ease-in-out;
-          border-radius: 0.2rem;
+          border-radius: 0.5rem;
         }
       }
     }
