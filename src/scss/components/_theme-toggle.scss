@@ -1,0 +1,25 @@
+.theme-toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  background-color: var(--surface-color);
+  color: var(--theme-color);
+  font-size: var(--tlarge2);
+  cursor: pointer;
+  outline: 2px dashed transparent;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--theme-color-soft);
+    border-color: var(--theme-color);
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    outline-color: var(--theme-color);
+  }
+}

@@ -42,11 +42,21 @@
     max-width: 100%;
   }
   
+  .contact-location {
+    color: var(--dark-slate);
+    font-size: var(--tsm1);
+    font-family: var(--fira-code);
+    letter-spacing: 0.03rem;
+    text-align: center;
+  }
+  
   .contact-cta {
     margin-top: 1rem;
     width: 100%;
     display: flex;
     justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
     
     .btn {
       padding: 1rem 2rem;

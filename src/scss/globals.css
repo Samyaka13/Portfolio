@@ -23,6 +23,38 @@
   --navy-shadow: rgba(31, 28, 23, 0.08);
   --card-shadow: 0 1px 2px rgba(31, 28, 23, 0.04), 0 4px 16px rgba(31, 28, 23, 0.06);
   --card-shadow-hover: 0 2px 4px rgba(31, 28, 23, 0.06), 0 12px 32px rgba(31, 28, 23, 0.1);
+
+  --nav-blur-bg: rgba(250, 249, 246, 0.85);
+}
+
+[data-theme="dark"] {
+  /* Dark, warm-charcoal surfaces (not pure black, to stay consistent
+     with the "warm, not stark" direction of the light theme) */
+  --background-color: #17140f;
+  --surface-color: #1f1b15;
+  --surface-raised: #241f18;
+  --lightest-navy: #2a251d;
+  --light-navy: #241f18;
+  --border-color: #3a3226;
+  --border-color-strong: #4a4030;
+
+  /* Text */
+  --dark-slate: #a89f8e;
+  --slate: #b5ab99;
+  --light-slate: #f0ece2;
+  --lightest-slate: #faf7f0;
+
+  /* Accent stays warm, brightened slightly for contrast on dark surfaces */
+  --theme-color: #e0794f;
+  --theme-color-hover: #ec8a62;
+  --theme-color-soft: rgba(224, 121, 79, 0.16);
+
+  /* Shadows */
+  --navy-shadow: rgba(0, 0, 0, 0.45);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 4px 16px rgba(0, 0, 0, 0.35);
+  --card-shadow-hover: 0 2px 4px rgba(0, 0, 0, 0.35), 0 12px 32px rgba(0, 0, 0, 0.45);
+
+  --nav-blur-bg: rgba(23, 20, 15, 0.85);
 }
 
 ::-moz-selection {
@@ -47,6 +79,7 @@ body {
   background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
   background-size: 28px 28px;
   background-attachment: fixed;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 main {
