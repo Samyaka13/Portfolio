@@ -1,5 +1,6 @@
 import Button from "@/components/Button";
 import Logo from "@/components/Logo";
+import ThemeToggle from "@/components/ThemeToggle";
 import Link from "next/link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgClose } from "react-icons/cg";
@@ -66,65 +67,70 @@ function Navbar() {
             <Logo />
           </Link>
         </motion.div>
-        <motion.div
-          className="nav-responsive-toggle"
-          initial={{ opacity: 0, y: 5 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.3,
-            ease: "easeInOut",
-          }}
-        >
-          {responsiveNavVisible ? (
-            <CgClose
-              onClick={(e) => {
-                e.stopPropagation();
-                setResponsiveNavVisible(false);
+        <div className="nav-right">
+          <div className="nav-actions">
+            <ThemeToggle />
+            <motion.div
+              className="nav-responsive-toggle"
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
               }}
-            />
-          ) : (
-            <GiHamburgerMenu
-              onClick={(e) => {
-                e.stopPropagation();
-                setResponsiveNavVisible(true);
-              }}
-            />
-          )}
-        </motion.div>
-        <div
-          className={`${responsiveNavVisible && "nav-responsive"} nav-items`}
-        >
-          <ul className="nav-items-list">
-            {sectionLinks.map(({ name, link }, index) => (
-              <motion.li
-                key={name}
-                className="nav-items-list-item"
-                initial={{ opacity: 0, y: -25 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 0.3,
-                  ease: "easeInOut",
-                  delay: 0.3 + index * 0.1,
-                }}
-              >
-                <Link href={link} className="nav-items-list-item-link">
-                  {name}
-                </Link>
-              </motion.li>
-            ))}
-          </ul>
-          <motion.div
-            className="nav-items-button"
-            initial={{ opacity: 0, y: -25 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 0.3,
-              ease: "easeInOut",
-              delay: 0.6,
-            }}
+            >
+              {responsiveNavVisible ? (
+                <CgClose
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setResponsiveNavVisible(false);
+                  }}
+                />
+              ) : (
+                <GiHamburgerMenu
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setResponsiveNavVisible(true);
+                  }}
+                />
+              )}
+            </motion.div>
+          </div>
+          <div
+            className={`${responsiveNavVisible && "nav-responsive"} nav-items`}
           >
-            <Button text="Resume" link="https://drive.google.com/file/d/1bN2s6pNphkTyasnDEqCJNTwP41-NnJH6/view" />
-          </motion.div>
+            <ul className="nav-items-list">
+              {sectionLinks.map(({ name, link }, index) => (
+                <motion.li
+                  key={name}
+                  className="nav-items-list-item"
+                  initial={{ opacity: 0, y: -25 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.3,
+                    ease: "easeInOut",
+                    delay: 0.3 + index * 0.1,
+                  }}
+                >
+                  <Link href={link} className="nav-items-list-item-link">
+                    {name}
+                  </Link>
+                </motion.li>
+              ))}
+            </ul>
+            <motion.div
+              className="nav-items-button"
+              initial={{ opacity: 0, y: -25 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                duration: 0.3,
+                ease: "easeInOut",
+                delay: 0.6,
+              }}
+            >
+              <Button text="Resume" link="https://drive.google.com/file/d/1bN2s6pNphkTyasnDEqCJNTwP41-NnJH6/view" />
+            </motion.div>
+          </div>
         </div>
       </div>
     </nav>

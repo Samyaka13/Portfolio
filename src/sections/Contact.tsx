@@ -17,11 +17,13 @@ function Contact() {
     >
       <h1 className="contact-title">What&apos;s Next?</h1>
       <h2 className="contact-sub-title">Get In Touch</h2>
+      <p className="contact-location">📍 Based in Gurgaon, India 🇮🇳</p>
       <p className="contact-text">
         💼 I&apos;m actively seeking SDE full-time opportunities in full-stack web development. Let&apos;s connect and build something impactful!
       </p>
       <div className="contact-cta">
         <Button link="mailto:samyakajmera022@gmail.com" text="Say Hello" />
+        <Button link="https://wa.me/917024362197" text="WhatsApp Me" />
       </div>
     </motion.div>
   );

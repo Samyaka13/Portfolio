@@ -39,6 +39,17 @@ nav {
       transition: 0.3s ease-in-out;
       z-index: 15;
     }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      z-index: 15;
+    }
     .nav-items {
       display: flex;
       gap: 3em;
@@ -116,7 +127,7 @@ nav {
     top: 0;
     transition: 0.3s ease-in-out;
     z-index: 100;
-    background-color: rgba(250, 249, 246, 0.85);
+    background-color: var(--nav-blur-bg);
     border-bottom: 1px solid var(--border-color);
     box-shadow: var(--card-shadow);
     backdrop-filter: blur(10px);
