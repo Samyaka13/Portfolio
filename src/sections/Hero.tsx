@@ -29,7 +29,7 @@ interface HeroProps {
 // Default configuration
 const defaultConfig: HeroConfig = {
   greeting: "Hi my name is",
-  name: "Samyak Ajmera",
+  name: "Forrest Gump",
   tagline: "I blend design, logic, and performance",
   description: "I'm a passionate developer who loves creating amazing digital experiences. I enjoy turning ideas into real-world solutions through full-stack web development and love exploring how technology can simplify and improve lives.",
   buttonText: "Check out my resume",
@@ -159,7 +159,7 @@ function Hero({
 export const HeroWithCustomConfig = (props: HeroProps) => {
   const samyakConfig: HeroConfig = {
     greeting: "Hi my name is",
-    name: "Samyak Ajmera",
+    name: "Forrest Gump",
     tagline: "I blend design, logic, and performance",
     description: "I'm Samyak Ajmera, a final-year B.Tech student with a deep interest in software development and AI. I enjoy turning ideas into real-world solutions through full-stack web development and love exploring how technology can simplify and improve lives. I'm curious, adaptable, and always eager to learn something new.",
     buttonText: "Check out my resume",
@@ -176,44 +176,7 @@ export const useHeroConfig = (customConfig: Partial<HeroConfig>) => {
 
 // Usage examples (commented out for production)
 /*
-// Example 1: Basic usage
-<Hero />
-
-// Example 2: Custom configuration
-<Hero 
-  config={{
-    greeting: "Hello, I'm",
-    name: "John Doe",
-    tagline: "Full Stack Developer",
-    description: "I create beautiful and functional web applications...",
-    buttonText: "View My Work",
-    buttonLink: "/portfolio"
-  }}
-/>
-
-// Example 3: Custom animations
-<Hero 
-  config={{
-    name: "Jane Smith",
-    tagline: "UI/UX Designer"
-  }}
-  animationConfig={{
-    duration: 0.5,
-    ease: "easeOut",
-    staggerDelay: 0.2
-  }}
-/>
-
-// Example 4: Using the hook
-const myConfig = useHeroConfig({
-  name: "Alex Johnson",
-  tagline: "Data Scientist"
-});
-
-<Hero config={myConfig} />
-
-// Example 5: Pre-configured component
-<HeroWithCustomConfig />
+<Hero /> 
 */
 
 export default Hero;
